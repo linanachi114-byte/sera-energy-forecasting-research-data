@@ -1006,9 +1006,10 @@
   "model_sources/verified_s_features.py": "9c330a70652f52d7ef3c1dc744033ec700bb3f077b74ff6b202a9b6fac5cecdb",
   "parameter_counts.csv": "2d240fe6d9910191d335b335639a0a6be190b34bf89db0cc1c74f90d8b7f4809",
   "primary_seed_mae.csv": "3076239d6a8d0f6badcf227567aa5b9d622545415b54332c71bf602149b91fe7",
-  "README.md": "ae3333aceacaeeb00dfcf13e6414c601200dc03f5d0c7b1383043c4a682389f4",
+  "README.md": "75125c44ea8a4d72a320b6ef7620bfff2ae5214738da4bcb258ec18d4164e48e",
   "reproduce_results.py": "ec0082ce027f3d51cea56e973fb8e976b03f8f9c246645626f6d1a833439a8c1",
   "requirements.txt": "864ddd89833f8ef18a82a57520f94a2db61bc91329645a91af4fe6a8ec722491",
+  "research_code/model_sources/reliability.py": "360ef11288455f339025b5f57bc6263a061f16b96429f086de6aa25cb2c22adc",
   "semantic_development_sensitivity.csv": "3f3a6bbe7169773e3a0a810d82f8a0e78cd632dbd24ccdf694bef94d26cfc449",
   "training_cost_cells.csv": "c70254bb51c8aeaf1047d7c73050013ce994b1468d698e6d2581516b7e806121"
 }

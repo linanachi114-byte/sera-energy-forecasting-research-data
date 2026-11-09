@@ -23,6 +23,8 @@ reported in the manuscript.
 - training_cost_cells.csv and parameter_counts.csv: recorded computational
   measurements.
 - model_sources/: the selected implementation's original source snapshots.
+- research_code/model_sources/reliability.py: the reliability implementation
+  cited in Supplementary Section S3, preserved from the archived source release.
 - error_archive_provenance.json and SHA256SUMS.json: source-output and
   deposit-file digests.
 
