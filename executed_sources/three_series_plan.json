@@ -1,0 +1,22 @@
+{
+  "question": "Extend the frozen language-free SERA experiment to ETTm2, GEFCom price and BDG2 Hog.",
+  "archive_commit": "6e5fb9637da3417e575a10c2e65fa67bc6be211b",
+  "archive_tag": "archive/pre-language-free-extension-20261109",
+  "datasets": {"H": "ETTm2", "L": "GEFCom price", "Q": "BDG2 Hog"},
+  "physical_leads_hours": [1, 12, 24],
+  "native_leads": {"H": [4, 48, 96], "L": [1, 12, 24], "Q": [1, 12, 24]},
+  "seeds": [41, 44],
+  "recipe": "Reuse the unchanged sera_numeric_20261109/run_experiment.py model, training, feature projection, prediction and matched decoder functions. Reconstruct inputs from numerical fields only.",
+  "decoder_comparisons": ["HES", "HE", "HS", "ES"],
+  "model_selection": "Do not retune architecture or hyperparameters using added development or test outcomes. Keep the original-ten development-selected ES decoder fixed, and report all frozen variants.",
+  "training": {"epochs": 80, "patience": 15, "batch_size": 128, "optimizer": "AdamW", "weight_decay": 0.0001, "gradient_clip": 1, "encoder_lr": 0.00015, "decoder_lr": 0.0003},
+  "reuse": "Only numerical origins, labels, covariates, window statistics, and separately trained target-only DLinear checkpoints. Archived SERA and baseline predictions enter comparisons only, never training.",
+  "source_integrity": "Verify prepared-file and raw-source hashes against archived metadata; verify BDG2 raw files against the recorded provider hashes and the reproducible processing audit.",
+  "aggregation": "Average MAE over seeds within each dataset-horizon task, compute relative reductions per task, and then equally average tasks. Report original ten, added three and combined thirteen separately.",
+  "resume": "Per-epoch model/optimizer/RNG checkpoints and per-cell completion hashes; one process lock; resume using the same command and frozen identity.",
+  "timeout_hours": 12,
+  "new_llm_calls": 0,
+  "overwrite_old_results": false,
+  "manuscript_changes": false,
+  "independent_new_holdout": false
+}

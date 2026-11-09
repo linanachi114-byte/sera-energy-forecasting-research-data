@@ -1,0 +1,20 @@
+{
+  "question": "Does a language-free SERA retain accuracy, and do three decoder experts improve over two?",
+  "baseline_commit": "9255213f9209843c9368ca205c0c48f03aafc2a2",
+  "datasets": ["C", "G", "M", "N", "O", "P", "R", "S", "T", "U"],
+  "physical_leads_hours": [1, 12, 24],
+  "seeds": [41, 44],
+  "initial_checks": "C/R/S/U at 12 hours, both seeds, followed by the remaining cells regardless of effect sign",
+  "language_free_training": "Train the temporal encoder and all decoder stages from random initialization or their own language-free preceding stage. No semantic features, reliability models or language-trained weights enter this pipeline.",
+  "data_reuse": "Reuse only data-derived origins, target indices, labels, window statistics and scaled numerical covariates. Reconstruct target histories from source files. Never load old trained latent features into language-free training.",
+  "independent_reference_reuse": "Reuse each audited DLinear checkpoint; it was trained from target histories alone.",
+  "training": {"epochs": 80, "patience": 15, "batch_size": 128, "optimizer": "AdamW", "weight_decay": 0.0001, "gradient_clip": 1, "encoder_lr": 0.00015, "decoder_lr": 0.0003, "encoder_loss": "normalized MAE", "decoder_loss": "raw-unit-equivalent MAE", "head_width": 64},
+  "stages": ["language-free temporal encoder", "latent decoder", "covariate-context decoder", "DLinear-reference decoder"],
+  "decoder_comparisons": ["HES", "HE", "HS", "ES"],
+  "decoder_comparison_scope": "Identical language-free frozen encoder and fully fitted decoder initialization; one matched additional decoder fit per retained expert set. These are decoder ablations, not four independently pretrained whole systems.",
+  "outputs": ["all stage checkpoints with optimizer/RNG and epoch recovery", "raw per-origin predictions and target indices", "separate H/E/S predictions", "three-expert equal mean", "adapted HES/HE/HS/ES", "matched original SERA branch diagnostics", "cell/task/dataset summaries"],
+  "selection": "No test-driven tuning. Compare frozen configurations; select any proposed simplification using mean task-relative development MAE, with differences within 0.1 percentage point resolved toward fewer output experts. Test results are reported separately.",
+  "test_status": "The historical benchmark periods were viewed in previous research; this is not a new independent holdout.",
+  "new_llm_calls": 0,
+  "old_outputs_overwritten": false
+}

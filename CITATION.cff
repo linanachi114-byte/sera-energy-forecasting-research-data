@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Please cite this versioned research-data deposit."
+type: dataset
+title: "Research data for dual-reference residual aggregation for energy forecasting"
+version: "2.0.0"
+date-released: "2026-11-10"
+authors:
+  - family-names: Li
+    given-names: Jiaqi
+  - family-names: Bian
+    given-names: Ruidong
+  - family-names: Zhang
+    given-names: Yu
+url: "https://github.com/linanachi114-byte/sera-energy-forecasting-research-data/releases/tag/v2.0.0"
