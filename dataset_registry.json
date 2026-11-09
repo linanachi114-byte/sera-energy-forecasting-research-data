@@ -1,0 +1,460 @@
+[
+  {
+    "key": "C",
+    "name": "Appliances energy",
+    "input_sha256": "2820bf712ad0275cb18b85a05250926100d8e65ebb9f4d2d016ca91ea152a25d",
+    "rows_after_loader": 3290,
+    "interval_minutes": 60,
+    "hist_len": 24,
+    "target": "Appliances",
+    "target_unit": "Wh",
+    "unit_status": "official UCI verified",
+    "source_url": "https://archive.ics.uci.edu/dataset/374/appliances+energy+prediction",
+    "covariates": [
+      "T_out",
+      "RH_out",
+      "Windspeed",
+      "Visibility"
+    ],
+    "aggregation": "hourly target sum and covariate means from 10-minute records; no minimum six-record completeness check",
+    "native_horizons": [
+      1,
+      12,
+      24
+    ],
+    "split_counts": [
+      [
+        1959,
+        489,
+        326,
+        492
+      ],
+      [
+        1933,
+        483,
+        322,
+        484
+      ],
+      [
+        1904,
+        476,
+        317,
+        477
+      ]
+    ],
+    "processed_input_filename": "energydata_complete.csv"
+  },
+  {
+    "key": "G",
+    "name": "ETTm1",
+    "input_sha256": "6ce1759b1a18e3328421d5d75fadcb316c449fcd7cec32820c8dafda71986c9e",
+    "rows_after_loader": 69680,
+    "interval_minutes": 15,
+    "hist_len": 96,
+    "target": "OT",
+    "target_unit": null,
+    "unit_status": "oil temperature; precise physical unit not verified in this audit",
+    "covariates": [
+      "HUFL",
+      "HULL",
+      "MUFL",
+      "MULL",
+      "LUFL",
+      "LULL"
+    ],
+    "aggregation": "none; native 15-minute series",
+    "native_horizons": [
+      4,
+      48,
+      96
+    ],
+    "split_counts": [
+      [
+        41743,
+        10435,
+        6957,
+        10437
+      ],
+      [
+        41637,
+        10409,
+        6939,
+        10411
+      ],
+      [
+        41522,
+        10380,
+        6920,
+        10382
+      ]
+    ],
+    "processed_input_filename": "ETTm1.csv"
+  },
+  {
+    "key": "M",
+    "name": "GEFCom2014 load",
+    "input_sha256": "1020c92eff907e74e2f2d645c29dbe9bffa17529148e10f5e6d2c69b80612738",
+    "rows_after_loader": 50376,
+    "interval_minutes": 60,
+    "hist_len": 168,
+    "target": "load",
+    "target_unit": null,
+    "unit_status": "physical unit not explicit in checked local metadata; do not infer MW without source",
+    "covariates": [
+      "temperature_mean",
+      "temperature_std",
+      "temperature_min",
+      "temperature_max"
+    ],
+    "aggregation": "hourly competition target; same-row weather-station summaries",
+    "time_axis": "competition record order represented by monotonic hourly slots",
+    "native_horizons": [
+      1,
+      12,
+      24
+    ],
+    "split_counts": [
+      [
+        30124,
+        7531,
+        5020,
+        7533
+      ],
+      [
+        30098,
+        7524,
+        5016,
+        7526
+      ],
+      [
+        30069,
+        7517,
+        5011,
+        7519
+      ]
+    ],
+    "processed_input_filename": "gefcom_load.csv"
+  },
+  {
+    "key": "N",
+    "name": "OPSD Germany load",
+    "input_sha256": "6790bb003edb7f5916db714e7301c00f6a7f83e09a01bb682c184f26c0bd33ed",
+    "rows_after_loader": 17690,
+    "interval_minutes": 60,
+    "hist_len": 168,
+    "target": "load_actual",
+    "target_unit": "MW",
+    "unit_status": "official OPSD data dictionary verified",
+    "source_url": "https://data.open-power-system-data.org/time_series/2020-10-06",
+    "covariates": [
+      "load_forecast",
+      "solar_generation",
+      "wind_generation"
+    ],
+    "aggregation": "native hourly data; longest complete contiguous interval",
+    "native_horizons": [
+      1,
+      12,
+      24
+    ],
+    "split_counts": [
+      [
+        10513,
+        2628,
+        1752,
+        2629
+      ],
+      [
+        10486,
+        2621,
+        1747,
+        2624
+      ],
+      [
+        10458,
+        2614,
+        1743,
+        2615
+      ]
+    ],
+    "processed_input_filename": "opsd_germany_load.csv"
+  },
+  {
+    "key": "O",
+    "name": "Household active power",
+    "input_sha256": "0a8c8ebf25a7e15477889cd7700195059b1807b5a3e36d581264bf7e2095439c",
+    "rows_after_loader": 10825,
+    "interval_minutes": 60,
+    "hist_len": 168,
+    "target": "Global_active_power",
+    "target_unit": "kW",
+    "unit_status": "official UCI verified",
+    "source_url": "https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption",
+    "covariates": [
+      "Global_reactive_power",
+      "Voltage",
+      "Global_intensity",
+      "Sub_metering_1",
+      "Sub_metering_2",
+      "Sub_metering_3"
+    ],
+    "aggregation": "at least 58 observed minutes per variable per hour; power/voltage/current means; submeter mean times 60; longest complete hourly block",
+    "native_horizons": [
+      1,
+      12,
+      24
+    ],
+    "split_counts": [
+      [
+        6394,
+        1598,
+        1065,
+        1600
+      ],
+      [
+        6367,
+        1591,
+        1061,
+        1594
+      ],
+      [
+        6339,
+        1584,
+        1056,
+        1586
+      ]
+    ],
+    "processed_input_filename": "household_power.csv"
+  },
+  {
+    "key": "P",
+    "name": "Electricity load diagrams aggregate",
+    "input_sha256": "63be4838d7c97d61d26846dbfa2fd1eaac239cb74dd1ab7284799dfa73e6b0af",
+    "rows_after_loader": 35065,
+    "interval_minutes": 60,
+    "hist_len": 168,
+    "target": "total_load",
+    "target_unit": "kW",
+    "unit_status": "official UCI verified",
+    "source_url": "https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014",
+    "covariates": [
+      "client_std",
+      "active_clients"
+    ],
+    "aggregation": "sum 370 clients at each 15-minute timestamp, then hourly mean; hourly mean client std and active count; no four-record completeness check",
+    "native_horizons": [
+      1,
+      12,
+      24
+    ],
+    "split_counts": [
+      [
+        20938,
+        5234,
+        3489,
+        5236
+      ],
+      [
+        20911,
+        5227,
+        3485,
+        5230
+      ],
+      [
+        20883,
+        5220,
+        3480,
+        5222
+      ]
+    ],
+    "processed_input_filename": "electricity_load_diagrams.csv"
+  },
+  {
+    "key": "R",
+    "name": "Steel industry energy",
+    "input_sha256": "af7ee6680393e9bbb876d3278f1d552d292f0a491398c551e4e6a15fc442489d",
+    "rows_after_loader": 8760,
+    "interval_minutes": 60,
+    "hist_len": 168,
+    "target": "Usage_kWh",
+    "target_unit": "kWh",
+    "unit_status": "official UCI verified",
+    "source_url": "https://archive.ics.uci.edu/dataset/851/steel+industry+energy+consumption",
+    "covariates": [
+      "Lagging_Current_Reactive.Power_kVarh",
+      "Leading_Current_Reactive_Power_kVarh",
+      "Lagging_Current_Power_Factor",
+      "Leading_Current_Power_Factor"
+    ],
+    "aggregation": "hourly sum requiring four observations for energies; hourly mean power factors",
+    "native_horizons": [
+      1,
+      12,
+      24
+    ],
+    "split_counts": [
+      [
+        5155,
+        1288,
+        859,
+        1290
+      ],
+      [
+        5128,
+        1282,
+        854,
+        1284
+      ],
+      [
+        5100,
+        1275,
+        850,
+        1275
+      ]
+    ],
+    "processed_input_filename": "uci_steel_energy.csv"
+  },
+  {
+    "key": "S",
+    "name": "Victoria demand",
+    "input_sha256": "f14719d4227eb8070d2052427568e808ff3eefaa2a919db229db46a8ff80a02e",
+    "rows_after_loader": 8760,
+    "interval_minutes": 60,
+    "hist_len": 168,
+    "target": "demand",
+    "target_unit": "GW",
+    "unit_status": "original fpp2 author documentation verified",
+    "source_url": "https://pkg.robjhyndman.com/fpp2/reference/elecdemand.html",
+    "dataset_doi": "10.5281/zenodo.4656069",
+    "covariates": [
+      "hour_sin",
+      "hour_cos",
+      "day_of_week_sin",
+      "day_of_week_cos"
+    ],
+    "aggregation": "mean two half-hour observations; origin calendar harmonics",
+    "native_horizons": [
+      1,
+      12,
+      24
+    ],
+    "split_counts": [
+      [
+        5155,
+        1288,
+        859,
+        1290
+      ],
+      [
+        5128,
+        1282,
+        854,
+        1284
+      ],
+      [
+        5100,
+        1275,
+        850,
+        1275
+      ]
+    ],
+    "processed_input_filename": "monash_elecdemand.csv"
+  },
+  {
+    "key": "T",
+    "name": "NREL Alabama regional synthetic solar power",
+    "input_sha256": "effcd77138fe4592998be728a04a276a24b00416d802e54f845a812e6f102a93",
+    "rows_after_loader": 8760,
+    "interval_minutes": 60,
+    "hist_len": 168,
+    "target": "solar_total_power",
+    "target_unit": null,
+    "unit_status": "source power scale retained; transformed archive physical unit not verified in this audit",
+    "source_url": "https://zenodo.org/records/4656144",
+    "dataset_doi": "10.5281/zenodo.4656144",
+    "synthetic": true,
+    "represented_weather_year": 2006,
+    "covariates": [
+      "hour_sin",
+      "hour_cos",
+      "day_of_year_sin",
+      "day_of_year_cos",
+      "site_power_std",
+      "active_sites"
+    ],
+    "aggregation": "hourly mean within each of 137 sites, regional sum across sites; original source ten-minute synthetic PV power",
+    "native_horizons": [
+      1,
+      12,
+      24
+    ],
+    "split_counts": [
+      [
+        5155,
+        1288,
+        859,
+        1290
+      ],
+      [
+        5128,
+        1282,
+        854,
+        1284
+      ],
+      [
+        5100,
+        1275,
+        850,
+        1275
+      ]
+    ],
+    "processed_input_filename": "monash_solar_10min.csv"
+  },
+  {
+    "key": "U",
+    "name": "Tetouan Zone 1",
+    "input_sha256": "d135d1b187fb5c32f7d118a347c75ca18d12ce10a79e09c029912063b8f91f68",
+    "rows_after_loader": 8736,
+    "interval_minutes": 60,
+    "hist_len": 168,
+    "target": "Z1",
+    "target_unit": null,
+    "unit_status": "official UCI record has blank units; retain native units",
+    "source_url": "https://archive.ics.uci.edu/dataset/849/power+consumption+of+",
+    "dataset_doi": "10.24432/C5B034",
+    "covariates": [
+      "Temperature",
+      "Humidity",
+      "Wind Speed",
+      "general diffuse flows",
+      "diffuse flows"
+    ],
+    "aggregation": "arithmetic mean of each complete six-observation ten-minute hour",
+    "native_horizons": [
+      1,
+      12,
+      24
+    ],
+    "split_counts": [
+      [
+        5140,
+        1285,
+        856,
+        1287
+      ],
+      [
+        5114,
+        1278,
+        852,
+        1280
+      ],
+      [
+        5085,
+        1271,
+        847,
+        1273
+      ]
+    ],
+    "processed_input_filename": "tetouan_zone1_hourly.csv"
+  }
+]

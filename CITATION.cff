@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Please cite this versioned research-data deposit."
+type: dataset
+title: "Research data for energy forecasting with branch-specific reference forecasts and residual experts"
+version: "1.0.0"
+date-released: "2026-11-09"
+authors:
+  - family-names: Li
+    given-names: Jiaqi
+  - family-names: Bian
+    given-names: Ruidong
+  - family-names: Zhang
+    given-names: Yu
+url: "https://github.com/linanachi114-byte/sera-energy-forecasting-research-data/releases/tag/v1.0.0"

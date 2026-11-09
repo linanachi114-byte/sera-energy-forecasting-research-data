@@ -1,0 +1,9 @@
+baseline,S_reduction_pct,task_wins,tasks,dataset_wins,datasets,table_scope
+N_KA,3.6552388397496824,26,30,9,10,main
+S_KA,3.2317431833933545,26,30,10,10,main
+DLinear_reference,9.71800960993178,26,30,10,10,main
+iTransformer,10.610325748817774,26,30,10,10,main
+TimeMixer,9.452602617519263,24,30,9,10,main
+TQNet,3.079905726739362,23,30,9,10,main
+PatchTST,4.1304958027518,27,30,9,10,main
+TimeXer,14.787277688756287,28,30,10,10,main
